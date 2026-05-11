@@ -1,23 +1,31 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
     <title>ToDo App</title>
+
+    <link rel="stylesheet" href="/static/style.css" />
   </head>
+
   <body>
-    <h1>My ToDo list</h1>
+    <div class="container">
+      <h1>ToDo App</h1>
 
-    <from action="/add" method="post">
-      <input type="text" name="task" placeholder="Enter a new task" />
-      <button type="submit">Add</button>
-    </from>
+      <p class="subtitle">Here you can add and delete your tasks.</p>
 
-    <ul>
-      {% for task in tasks %}
-      <li>
-        {{ task }}
-        <a href="/delete/{{ loop.index0 }}">Delete</a>
-      </li>
-      {% endfor %}
-    </ul>
+      <form action="/add" method="post" class="task-form">
+        <input type="text" name="task" placeholder="New task" required />
+        <button type="submit">Add</button>
+      </form>
+
+      <ul class="task-list">
+        {% for task in tasks %}
+        <li>
+          <span>{{ task }}</span>
+          <a href="/delete/{{ loop.index0 }}" class="delete-button">Delete</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
   </body>
 </html>
