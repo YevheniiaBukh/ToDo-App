@@ -31,3 +31,11 @@
   - `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass`
 
 - The app uses SQLite and will create `tasks.db` automatically on first run.
+
+## Live Demo
+
+https://todo-app-kjp3.onrender.com
+
+## About
+This is my Todo App.
+
